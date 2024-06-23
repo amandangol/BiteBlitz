@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748533857447",
+    "project_id": "biteblitz-app",
+    "storage_bucket": "biteblitz-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748533857447:android:ca3e54eada1a30b0c6af82",
+        "android_client_info": {
+          "package_name": "com.example.food_delivery_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQUGeWHdqJ8B1AnfTkW2G29cJ7zJZVp18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
