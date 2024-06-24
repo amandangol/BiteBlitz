@@ -3,14 +3,18 @@ import 'package:flutter/material.dart';
 class MyTextfield extends StatelessWidget {
   final TextEditingController? controller;
   final String? hintText;
-  final bool obscureText;
+  final bool? obscureText;
   final FormFieldValidator<String>? validator;
+  final IconData? suffixIcon;
+  final VoidCallback? onTap;
 
   MyTextfield(
       {super.key,
       required this.controller,
       required this.hintText,
       required this.obscureText,
+      this.suffixIcon,
+      this.onTap,
       required this.validator});
 
   @override
@@ -20,8 +24,13 @@ class MyTextfield extends StatelessWidget {
       child: TextFormField(
         validator: validator,
         controller: controller,
-        obscureText: obscureText,
+        autofocus: false,
+        obscureText: obscureText!,
         decoration: InputDecoration(
+            suffixIcon: IconButton(
+              icon: Icon(suffixIcon),
+              onPressed: onTap,
+            ),
             hintText: hintText,
             border: OutlineInputBorder(
                 borderSide:

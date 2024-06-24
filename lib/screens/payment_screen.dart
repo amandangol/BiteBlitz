@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:food_delivery_app/screens/delivery_progress_screen.dart';
+import 'package:food_delivery_app/utils/loading_dialog.dart';
 import 'package:food_delivery_app/widgets/my_button.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -62,11 +63,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DeliveryProgressScreen()));
+                        builder: (context) => const DeliveryProgressScreen()));
               },
               child: Container(
                 padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),

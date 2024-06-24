@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/models/food_model.dart';
 import 'package:food_delivery_app/models/restaurant_model.dart';
 import 'package:food_delivery_app/screens/cart_screen.dart';
+import 'package:food_delivery_app/utils/custom_scaffold_messenger.dart';
 import 'package:food_delivery_app/widgets/my_button.dart';
 import 'package:provider/provider.dart';
 
@@ -40,32 +41,10 @@ class _FoodScreenState extends State<FoodScreen> {
   void _showSnackBar() {
     Future.delayed(const Duration(milliseconds: 300), () {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text(
-              'Item added to cart',
-              style: TextStyle(color: Colors.white),
-            ),
-            backgroundColor: Colors.green,
-            action: SnackBarAction(
-              label: 'View Cart',
-              textColor: Colors.yellow,
-              onPressed: () {
-                // Navigate to the cart screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const CartScreen()),
-                );
-              },
-            ),
-            duration: const Duration(seconds: 3),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            behavior: SnackBarBehavior.floating,
-            margin: const EdgeInsets.all(10),
-          ),
-        );
+        CustomScaffoldMessenger.showSnackBar(context, "Item added to cart", () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CartScreen()));
+        }, "View Cart", backgroundColor: Colors.green);
       }
     });
   }

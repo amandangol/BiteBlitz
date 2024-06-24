@@ -45,6 +45,17 @@ class CartScreen extends StatelessWidget {
                               TextButton(
                                 onPressed: () {
                                   restaurant.clearCart();
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: const Text("Cart cleared"),
+                                      duration: const Duration(seconds: 3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      behavior: SnackBarBehavior.floating,
+                                      margin: const EdgeInsets.all(10),
+                                    ),
+                                  );
                                   Navigator.pop(context);
                                 },
                                 child: Text(
